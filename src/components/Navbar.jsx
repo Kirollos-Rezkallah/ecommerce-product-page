@@ -6,13 +6,6 @@ import Avatar from "../assets/images/image-avatar.png";
 function Navbar() {
   const [isCartOn, setIsCartOn] = useState(false);
 
-  function handleHoverEnter() {
-    setIsCartOn(true);
-  }
-
-  function handleHoverLeave() {
-    setIsCartOn(false);
-  }
   return (
     <nav className="navbar">
       <div className="nav-texts">
@@ -40,14 +33,10 @@ function Navbar() {
       </div>
 
       <div className="nav-imgs">
-        <div>
-          <img
-            onMouseEnter={handleHoverEnter}
-            onMouseLeave={handleHoverLeave}
-            className="cart"
-            src={CartIcon}
-            alt="cart-icon"
-          />
+        <div
+          onMouseEnter={() => setIsCartOn(true)}
+          onMouseLeave={() => setIsCartOn(false)}>
+          <img className="cart" src={CartIcon} alt="cart-icon" />
           <Cart isVisible={isCartOn} />
         </div>
         <img className="avatar" src={Avatar} alt="avatar-img" />

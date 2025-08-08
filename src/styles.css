@@ -1,0 +1,126 @@
+/* 
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 / 160 / 192 / 224 / 256 / 288
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98 
+*/
+
+:root {
+  --orange: hsl(26, 100%, 55%);
+  --pale-orange: hsl(25, 100%, 94%);
+  --very-dark-blue: #1d2025ff;
+  --dark-grayish-blue: #68707dff;
+  --grayish-blue: hsl(220, 14%, 75%);
+  --light-grayish-blue: #f7f8fdff;
+  --white: hsl(0, 0%, 100%);
+  --black: #000000ff;
+  --black-overlay-75: #000000bf;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #f7f8fdff;
+  color: var(--dark-grayish-blue);
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+#root {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  padding: 4.8rem 0;
+  border-bottom: 1px solid var(--grayish-blue);
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+.navbar ul li {
+  list-style: none;
+  cursor: pointer;
+}
+
+/* LVHA */
+
+.navbar ul li a:link,
+.navbar ul li a:visited {
+  position: relative;
+  color: var(--dark-grayish-blue);
+  text-decoration: none;
+  cursor: pointer;
+  padding-bottom: 20px;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a:active {
+  color: var(--black);
+}
+
+.navbar ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -4rem;
+  left: 0;
+  width: 100%;
+  height: 0.5rem;
+  background-color: var(--orange);
+  opacity: 0;
+  /* transition: opacity 0.2s ease; */
+}
+
+.navbar ul li a:hover::after,
+.navbar ul li a:active::after {
+  opacity: 1;
+}
+
+.nav-texts,
+.nav-imgs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.nav-texts {
+  gap: 4.8rem;
+}
+
+.nav-imgs .cart {
+  cursor: pointer;
+}
+
+.nav-imgs .cart:hover {
+  filter: brightness(0) saturate(90%);
+}
+
+.avatar {
+  width: 4.4rem;
+  cursor: pointer;
+}
+
+.avatar:hover {
+  border-radius: 999px;
+  border: 2px solid var(--orange);
+}

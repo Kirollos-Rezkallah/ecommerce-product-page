@@ -51,7 +51,7 @@ body {
   align-items: center;
   justify-content: space-between;
   font-size: 1.6rem;
-  padding: 4.8rem 0;
+  padding: 1.8rem 0;
   border-bottom: 1px solid var(--grayish-blue);
 }
 
@@ -85,7 +85,7 @@ body {
 .navbar ul li a::after {
   content: "";
   position: absolute;
-  bottom: -7.1rem;
+  bottom: -4.1rem;
   left: 0;
   width: 100%;
   height: 0.5rem;
@@ -136,10 +136,10 @@ body {
 
 .cart-tab {
   position: absolute;
-  top: 11rem;
+  top: 8rem;
   right: 11rem;
   width: 30rem;
-  height: 30rem;
+  height: 24rem;
   padding: 1rem 1.5rem;
   border-radius: 1rem;
   box-shadow: 0 6px 12px 6px rgba(0, 0, 0, 0.07);
@@ -156,6 +156,7 @@ body {
   pointer-events: auto;
 }
 .cart-tab h2 {
+  font-size: 1.6rem;
   padding-bottom: 2.4rem;
   border-bottom: 1px solid var(--very-dark-blue);
   border-bottom: 1px solid var(--very-dark-blue);
@@ -166,5 +167,5 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 1.4rem;
-  padding: 10.5rem 0;
+  padding: 8.5rem 0;
 }

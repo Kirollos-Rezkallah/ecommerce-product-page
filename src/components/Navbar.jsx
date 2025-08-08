@@ -1,8 +1,18 @@
+import { useState } from "react";
 import Logo from "../assets/icons/logo.svg";
-import Cart from "../assets/icons/icon-cart.svg";
+import CartIcon from "../assets/icons/icon-cart.svg";
 import Avatar from "../assets/images/image-avatar.png";
 
 function Navbar() {
+  const [isCartOn, setIsCartOn] = useState(false);
+
+  function handleHoverEnter() {
+    setIsCartOn(true);
+  }
+
+  function handleHoverLeave() {
+    setIsCartOn(false);
+  }
   return (
     <nav className="navbar">
       <div className="nav-texts">
@@ -30,10 +40,30 @@ function Navbar() {
       </div>
 
       <div className="nav-imgs">
-        <img className="cart" src={Cart} alt="cart-icon" />
+        <div>
+          <img
+            onMouseEnter={handleHoverEnter}
+            onMouseLeave={handleHoverLeave}
+            className="cart"
+            src={CartIcon}
+            alt="cart-icon"
+          />
+          <Cart isVisible={isCartOn} />
+        </div>
         <img className="avatar" src={Avatar} alt="avatar-img" />
       </div>
     </nav>
+  );
+}
+
+function Cart({ isVisible }) {
+  return (
+    <div className={`cart-tab ${isVisible ? "visible" : ""}`}>
+      <h2>Cart</h2>
+      <div className="cart-content">
+        <p className="empty-cart">Your cart is empty.</p>
+      </div>
+    </div>
   );
 }
 

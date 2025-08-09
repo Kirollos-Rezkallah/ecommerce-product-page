@@ -3,7 +3,7 @@ import CartIcon from "../assets/icons/icon-cart.svg";
 import Button from "./Button";
 import { details } from "../data";
 
-function Details({ setCartContent, cartContent }) {
+function Details({ setCartContent }) {
   const [quantity, setQuantity] = useState(0);
 
   function handleAdd() {
@@ -12,6 +12,11 @@ function Details({ setCartContent, cartContent }) {
 
   function handleSubtract() {
     if (quantity > 0) setQuantity((s) => s - 1);
+  }
+
+  function handleAddToCart() {
+    setCartContent(quantity);
+    setQuantity(0);
   }
   return (
     <section className="details">
@@ -26,9 +31,7 @@ function Details({ setCartContent, cartContent }) {
           <button>{quantity}</button>
           <button onClick={handleAdd}>+</button>
         </div>
-        <Button
-          className="add-to-cart"
-          onClick={() => setCartContent(quantity)}>
+        <Button className="add-to-cart" onClick={handleAddToCart}>
           <img src={CartIcon} alt="cart-icon" />
           <p>Add to cart</p>
         </Button>

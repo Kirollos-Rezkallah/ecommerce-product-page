@@ -7,7 +7,7 @@ import { gallery, details } from "../data";
 import DeleteIcon from "../assets/icons/icon-delete.svg";
 
 function Navbar({ cartContent, setCartContent }) {
-  const [isCartOn, setIsCartOn] = useState(true);
+  const [isCartOn, setIsCartOn] = useState(false);
 
   return (
     <nav className="navbar">
@@ -38,7 +38,7 @@ function Navbar({ cartContent, setCartContent }) {
       <div className="nav-imgs">
         <div
           onMouseEnter={() => setIsCartOn(true)}
-          onMouseLeave={() => setIsCartOn(true)}>
+          onMouseLeave={() => setIsCartOn(false)}>
           <img className="cart" src={CartIcon} alt="cart-icon" />
           <Cart
             isVisible={isCartOn}

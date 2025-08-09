@@ -1,7 +1,8 @@
 import { useState } from "react";
 import CartIcon from "../assets/icons/icon-cart.svg";
+import Button from "./Button";
 
-function Details() {
+function Details({ setCartContent }) {
   const [quantity, setQuantity] = useState(0);
 
   function handleAdd() {
@@ -28,10 +29,10 @@ function Details() {
           <button>{quantity}</button>
           <button onClick={handleAdd}>+</button>
         </div>
-        <div className="add-to-cart">
+        <Button onClick={setCartContent(quantity)}>
           <img src={CartIcon} alt="cart-icon" />
           <p>Add to cart</p>
-        </div>
+        </Button>
       </div>
     </section>
   );

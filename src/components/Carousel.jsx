@@ -2,7 +2,7 @@ import { useState } from "react";
 import { gallery } from "../data";
 
 function Carousel() {
-  const [activeIndex, setActiveIndex] = useState(3);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   function handleClick(id) {
     setActiveIndex(id - 1);
@@ -10,7 +10,11 @@ function Carousel() {
   return (
     <section>
       <div className="hero-img">
-        <img src={gallery[activeIndex].full} alt={gallery[activeIndex].alt} />
+        <img
+          key={activeIndex}
+          src={gallery[activeIndex].full}
+          alt={gallery[activeIndex].alt}
+        />
       </div>
       <div className="gallery-imgs">
         {gallery.map((product, i) => (

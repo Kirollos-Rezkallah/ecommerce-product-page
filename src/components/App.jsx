@@ -3,13 +3,13 @@ import Carousel from "./Carousel";
 import Details from "./Details";
 import { useState } from "react";
 function App() {
-  const [cartContent, setCartContent] = useState(0);
+  const [cartContent, setCartContent] = useState(1);
   return (
     <div>
       <Navbar cartContent={cartContent} setCartContent={setCartContent} />
       <main>
         <Carousel />
-        <Details setCartContent={setCartContent} />
+        <Details setCartContent={setCartContent} cartContent={cartContent} />
       </main>
     </div>
   );

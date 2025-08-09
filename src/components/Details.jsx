@@ -1,8 +1,9 @@
 import { useState } from "react";
 import CartIcon from "../assets/icons/icon-cart.svg";
 import Button from "./Button";
+import { details } from "../data";
 
-function Details({ setCartContent }) {
+function Details({ setCartContent, cartContent }) {
   const [quantity, setQuantity] = useState(0);
 
   function handleAdd() {
@@ -15,21 +16,19 @@ function Details({ setCartContent }) {
   return (
     <section className="details">
       <p className="company-name">Sneaker company</p>
-      <h2>Fall limited edition sneakers</h2>
-      <p className="paragraph">
-        These low-profile sneakers are your perfect casual wear companion.
-        Featuring a durable rubber outer sole, they'll withstand everything the
-        weather can offer.
-      </p>
-      <p className="price">$125.00</p>
-      <p className="price-before">$250.00</p>
+      <h2>{details.name}</h2>
+      <p className="paragraph">{details.description}</p>
+      <p className="price">{`$${details.price}.00`}</p>
+      <p className="price-before">{details.priceBeforeDiscount}</p>
       <div className="flex-div">
         <div className="quantity-buttons">
           <button onClick={handleSubtract}>−</button>
           <button>{quantity}</button>
           <button onClick={handleAdd}>+</button>
         </div>
-        <Button onClick={setCartContent(quantity)}>
+        <Button
+          className="add-to-cart"
+          onClick={() => setCartContent(quantity)}>
           <img src={CartIcon} alt="cart-icon" />
           <p>Add to cart</p>
         </Button>

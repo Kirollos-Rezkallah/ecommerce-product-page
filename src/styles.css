@@ -142,7 +142,7 @@ body {
   top: 8rem;
   right: 11rem;
   width: 30rem;
-  height: 24rem;
+  height: 23rem;
   padding: 1rem 1.5rem;
   border-radius: 1rem;
   box-shadow: 0 6px 12px 6px rgba(0, 0, 0, 0.07);
@@ -151,6 +151,10 @@ body {
   transform: translateY(-10px);
   pointer-events: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .cart-tab.visible {
@@ -170,7 +174,48 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 1.4rem;
-  padding: 8.5rem 0;
+}
+
+.full-cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 2rem 0;
+}
+
+.cart-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cart-details p {
+  font-size: 1.4rem;
+}
+
+.full-cart img {
+  width: 5rem;
+  border-radius: 0.4rem;
+}
+
+.empty-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 17rem;
+}
+
+.delete-button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  cursor: pointer;
+}
+
+.delete-button img {
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 /* ============ MAIN =========== */

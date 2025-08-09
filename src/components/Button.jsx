@@ -14,9 +14,9 @@ const styles = {
   fontWeight: "700",
 };
 
-function Button({ children, ...props }) {
+function Button({ children, className, ...props }) {
   return (
-    <button style={styles} className="add-to-cart" {...props}>
+    <button style={styles} className={className} {...props}>
       {children}
     </button>
   );
